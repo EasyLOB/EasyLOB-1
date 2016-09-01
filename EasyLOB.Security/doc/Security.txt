@@ -1,0 +1,16 @@
+Security
+
+
+:: !!! Identity
+
+dbo._MigrationHistory (-)
+
+
+:: !!! Membership
+
+dbo.aspnet_SchemaVersions (-)
+dbo.aspnet_WebEvent_Events (-)
+
+1:N => 1:1 Path -> PersonalizationAllUser
+1:N => 1:1 User -> Membership 
+1:N => 1:1 User -> Profile 
