@@ -67,24 +67,28 @@ namespace EasyLOB.Security.Data
 
         //[Display(Name = "PropertyAccessFailedCount", ResourceType = typeof(UserResources))]
         //[DisplayFormat(DataFormatString = "{0:d}", ApplyFormatInEditMode = true)]
-        //[Range(1, Int32.MaxValue)]
         //[Required]
         //public virtual int AccessFailedCount { get; set; }
 
         #endregion Properties
 
-        #region Properties ZViewBase
-
-        public override string LookupText { get; set; }
-
-        #endregion Properties ZViewBase
-
         #region Methods
 
         public UserViewModel()
         {
-            // !!!
-            Id = Guid.NewGuid().ToString();            
+            //Id = LibraryDefaults.Default_String;            
+            Id = Guid.NewGuid().ToString(); // !!!
+            //EmailConfirmed = LibraryDefaults.Default_Boolean;
+            //PhoneNumberConfirmed = LibraryDefaults.Default_Boolean;
+            //TwoFactorEnabled = LibraryDefaults.Default_Boolean;
+            //LockoutEnabled = LibraryDefaults.Default_Boolean;
+            //AccessFailedCount = LibraryDefaults.Default_Int32;
+            UserName = LibraryDefaults.Default_String;
+            Email = null;
+            //PasswordHash = null;
+            //SecurityStamp = null;
+            //PhoneNumber = null;
+            //LockoutEndDateUtc = null;
         }
 
         public UserViewModel(
@@ -101,7 +105,6 @@ namespace EasyLOB.Security.Data
             //string phoneNumber = null,
             //DateTime? lockoutEndDateUtc = null
         )
-            : this()
         {
             Id = id;
             UserName = userName;
@@ -146,8 +149,7 @@ namespace EasyLOB.Security.Data
                 //TwoFactorEnabled = x.TwoFactorEnabled,
                 //LockoutEndDateUtc = x.LockoutEndDateUtc,
                 //LockoutEnabled = x.LockoutEnabled,
-                //AccessFailedCount = x.AccessFailedCount,
-                LookupText = x.LookupText
+                //AccessFailedCount = x.AccessFailedCount
             };
         }
 

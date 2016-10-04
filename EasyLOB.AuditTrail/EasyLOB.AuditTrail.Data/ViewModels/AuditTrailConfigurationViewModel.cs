@@ -15,7 +15,6 @@ namespace EasyLOB.AuditTrail.Data
         [Display(Name = "PropertyAuditTrailConfigurationId", ResourceType = typeof(AuditTrailConfigurationResources))]
         [DisplayFormat(DataFormatString = "{0:d}", ApplyFormatInEditMode = true)]
         //[Key]
-        [Range(1, Int32.MaxValue)]
         [Required]
         public virtual int AuditTrailConfigurationId { get; set; }
         
@@ -39,17 +38,15 @@ namespace EasyLOB.AuditTrail.Data
 
         #endregion Properties
 
-        #region Properties ZViewBase
-
-        public override string LookupText { get; set; }
-
-        #endregion Properties ZViewBase
-
         #region Methods
         
         public AuditTrailConfigurationViewModel()
         {
-            AuditTrailConfigurationId = 1;
+            AuditTrailConfigurationId = LibraryDefaults.Default_Int32;
+            Domain = LibraryDefaults.Default_String;
+            Entity = LibraryDefaults.Default_String;
+            LogOperations = null;
+            LogMode = null;
         }
         
         public AuditTrailConfigurationViewModel(
@@ -59,7 +56,6 @@ namespace EasyLOB.AuditTrail.Data
             string logOperations = null,
             string logMode = null
         )
-            : this()
         {
             AuditTrailConfigurationId = auditTrailConfigurationId;
             Domain = domain;
@@ -90,8 +86,7 @@ namespace EasyLOB.AuditTrail.Data
                 Domain = x.Domain,
                 Entity = x.Entity,
                 LogOperations = x.LogOperations,
-                LogMode = x.LogMode,
-                LookupText = x.LookupText
+                LogMode = x.LogMode
             };
         }
 

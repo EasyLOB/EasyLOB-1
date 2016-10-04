@@ -25,25 +25,19 @@ namespace EasyLOB.Security.Data
 
         #endregion Properties
 
-        #region Properties ZViewBase
-
-        public override string LookupText { get; set; }
-
-        #endregion Properties ZViewBase
-
         #region Methods
 
         public ActivityViewModel()
         {
-            // !!!
-            Id = Guid.NewGuid().ToString();
+            //Id = LibraryDefaults.Default_String;            
+            Id = Guid.NewGuid().ToString(); // !!!
+            Name = LibraryDefaults.Default_String;
         }
 
         public ActivityViewModel(
             string id,
             string name
         )
-            : this()
         {
             Id = id;
             Name = name;
@@ -68,8 +62,7 @@ namespace EasyLOB.Security.Data
             return x => new ActivityDTO
             {
                 Id = x.Id,
-                Name = x.Name,
-                LookupText = x.LookupText
+                Name = x.Name
             };
         }
 

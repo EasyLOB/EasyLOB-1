@@ -10,11 +10,7 @@ namespace EasyLOB.Data
     {
         #region Properties
 
-        public virtual string LookupText
-        {
-            get { throw new NotImplementedException(); }
-            set { }
-        }
+        public virtual string LookupText { get; set; }
 
         #endregion Properties
 

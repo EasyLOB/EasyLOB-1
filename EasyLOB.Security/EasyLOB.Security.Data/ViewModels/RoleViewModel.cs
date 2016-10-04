@@ -32,18 +32,14 @@ namespace EasyLOB.Security.Data
 
         #endregion Properties
 
-        #region Properties ZViewBase
-
-        public override string LookupText { get; set; }
-
-        #endregion Properties ZViewBase
-
         #region Methods
 
         public RoleViewModel()
         {
-            // !!!
-            Id = Guid.NewGuid().ToString(); 
+            //Id = LibraryDefaults.Default_String;
+            Id = Guid.NewGuid().ToString(); // !!! 
+            Name = LibraryDefaults.Default_String;
+            //Discriminator = LibraryDefaults.Default_String;
         }
 
         public RoleViewModel(
@@ -51,7 +47,6 @@ namespace EasyLOB.Security.Data
             string name
             //string discriminator
         )
-            : this()
         {
             Id = id;
             Name = name;
@@ -78,8 +73,7 @@ namespace EasyLOB.Security.Data
             {
                 Id = x.Id,
                 Name = x.Name,
-                //Discriminator = x.Discriminator,
-                LookupText = x.LookupText
+                //Discriminator = x.Discriminator
             };
         }
 

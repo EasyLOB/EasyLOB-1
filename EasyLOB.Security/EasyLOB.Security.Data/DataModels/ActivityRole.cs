@@ -46,16 +46,6 @@ namespace EasyLOB.Security.Data
 
         #endregion Properties
 
-        #region Properties ZDataBase
-
-        public override string LookupText
-        {
-            get { return base.LookupText; }
-            set { }
-        }
-         
-        #endregion Properties ZDataBase
-
         #region Associations (FK)
 
         public virtual Activity Activity { get; set; } // ActivityId

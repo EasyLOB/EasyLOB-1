@@ -11,8 +11,6 @@ namespace EasyLOB.Data
     {
         #region Properties
 
-        private string _lookupText;
-
         [JsonIgnore] // Newtonsoft.Json
         [NotMapped] // MongoDB
         public virtual string LookupText
@@ -31,7 +29,7 @@ namespace EasyLOB.Data
 
                 return result;
             }
-            set { string _lookupText = value; }
+            set { }
         }
 
         #endregion Properties

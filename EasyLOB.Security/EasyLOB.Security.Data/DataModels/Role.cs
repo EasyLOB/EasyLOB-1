@@ -26,21 +26,11 @@ namespace EasyLOB.Security.Data
 
         #endregion Properties
 
-        #region Properties ZDataBase
-
-        public override string LookupText
-        {
-            get { return base.LookupText; }
-            set { }
-        }
-
-        #endregion Properties
-
         #region Collections (PK)
 
-        public virtual IList<ActivityRole> ActivityRoles { get; set; }
+        public virtual IList<ActivityRole> ActivityRoles { get; }
 
-        public virtual IList<UserRole> UserRoles { get; set; }
+        public virtual IList<UserRole> UserRoles { get; }
 
         #endregion Collections (PK)
 

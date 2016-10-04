@@ -24,16 +24,12 @@ namespace EasyLOB.Security.Data
     
         #endregion Associations FK
 
-        #region Properties ZDTOBase
-
-        public override string LookupText { get; set; }
-
-        #endregion Properties ZDTOBase
-
         #region Methods
         
         public UserRoleDTO()
         {
+            UserId = LibraryDefaults.Default_String;
+            RoleId = LibraryDefaults.Default_String;
         }
         
         public UserRoleDTO(

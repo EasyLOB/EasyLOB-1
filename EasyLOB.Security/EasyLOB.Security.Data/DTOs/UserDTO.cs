@@ -36,16 +36,22 @@ namespace EasyLOB.Security.Data
 
         #endregion Properties
 
-        #region Properties ZDTOBase
-
-        public override string LookupText { get; set; }
-
-        #endregion Properties ZDTOBase
-
         #region Methods
         
         public UserDTO()
         {
+            Id = LibraryDefaults.Default_String;
+            EmailConfirmed = LibraryDefaults.Default_Boolean;
+            PhoneNumberConfirmed = LibraryDefaults.Default_Boolean;
+            TwoFactorEnabled = LibraryDefaults.Default_Boolean;
+            LockoutEnabled = LibraryDefaults.Default_Boolean;
+            AccessFailedCount = LibraryDefaults.Default_Int32;
+            UserName = LibraryDefaults.Default_String;
+            Email = null;
+            PasswordHash = null;
+            SecurityStamp = null;
+            PhoneNumber = null;
+            LockoutEndDateUtc = null;
         }
         
         public UserDTO(

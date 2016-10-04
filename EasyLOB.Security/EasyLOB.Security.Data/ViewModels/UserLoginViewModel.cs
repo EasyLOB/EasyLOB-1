@@ -41,19 +41,13 @@ namespace EasyLOB.Security.Data
     
         #endregion Associations FK
 
-        #region Properties ZViewBase
-
-        public override string LookupText { get; set; }
-
-        #endregion Properties ZViewBase
-
         #region Methods
         
         public UserLoginViewModel()
         {
-            LoginProvider = "A";
-            ProviderKey = "A";
-            UserId = "A";
+            LoginProvider = LibraryDefaults.Default_String;
+            ProviderKey = LibraryDefaults.Default_String;
+            UserId = LibraryDefaults.Default_String;
         }
         
         public UserLoginViewModel(
@@ -62,7 +56,6 @@ namespace EasyLOB.Security.Data
             string userId,
             string userLookupText = null
         )
-            : this()
         {
             LoginProvider = loginProvider;
             ProviderKey = providerKey;
@@ -90,9 +83,7 @@ namespace EasyLOB.Security.Data
             {
                 LoginProvider = x.LoginProvider,
                 ProviderKey = x.ProviderKey,
-                UserId = x.UserId,
-                UserLookupText = x.UserLookupText,
-                LookupText = x.LookupText
+                UserId = x.UserId
             };
         }
 

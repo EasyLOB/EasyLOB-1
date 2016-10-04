@@ -36,18 +36,12 @@ namespace EasyLOB.Security.Data
     
         #endregion Associations FK
 
-        #region Properties ZViewBase
-
-        public override string LookupText { get; set; }
-
-        #endregion Properties ZViewBase
-
         #region Methods
         
         public UserRoleViewModel()
         {
-            UserId = "A";
-            RoleId = "A";
+            UserId = LibraryDefaults.Default_String;
+            RoleId = LibraryDefaults.Default_String;
         }
         
         public UserRoleViewModel(
@@ -56,7 +50,6 @@ namespace EasyLOB.Security.Data
             string roleLookupText = null,
             string userLookupText = null
         )
-            : this()
         {
             UserId = userId;
             RoleId = roleId;
@@ -83,10 +76,7 @@ namespace EasyLOB.Security.Data
             return x => new UserRoleDTO
             {
                 UserId = x.UserId,
-                RoleId = x.RoleId,
-                RoleLookupText = x.RoleLookupText,
-                UserLookupText = x.UserLookupText,
-                LookupText = x.LookupText
+                RoleId = x.RoleId
             };
         }
 

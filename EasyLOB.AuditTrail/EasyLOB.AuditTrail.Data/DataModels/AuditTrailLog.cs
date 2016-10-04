@@ -40,16 +40,6 @@ namespace EasyLOB.AuditTrail.Data
 
         #endregion Properties
 
-        #region Properties ZDataBase
-
-        public override string LookupText
-        {
-            get { return base.LookupText; }
-            set { }
-        }
-
-        #endregion Properties ZDataBase
-
         #region Methods
         
         public AuditTrailLog()

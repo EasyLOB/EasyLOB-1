@@ -22,16 +22,15 @@ namespace EasyLOB.AuditTrail.Data
 
         #endregion Properties
 
-        #region Properties ZDTOBase
-
-        public override string LookupText { get; set; }
-
-        #endregion Properties ZDTOBase
-
         #region Methods
         
         public AuditTrailConfigurationDTO()
         {
+            AuditTrailConfigurationId = LibraryDefaults.Default_Int32;
+            Domain = LibraryDefaults.Default_String;
+            Entity = LibraryDefaults.Default_String;
+            LogOperations = null;
+            LogMode = null;
         }
         
         public AuditTrailConfigurationDTO(

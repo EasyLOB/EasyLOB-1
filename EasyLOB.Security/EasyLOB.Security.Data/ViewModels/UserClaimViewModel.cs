@@ -15,7 +15,6 @@ namespace EasyLOB.Security.Data
         [Display(Name = "PropertyId", ResourceType = typeof(UserClaimResources))]
         [DisplayFormat(DataFormatString = "{0:d}", ApplyFormatInEditMode = true)]
         //[Key]
-        [Range(1, Int32.MaxValue)]
         [Required]
         public virtual int Id { get; set; }
         
@@ -40,17 +39,14 @@ namespace EasyLOB.Security.Data
     
         #endregion Associations FK
 
-        #region Properties ZViewBase
-
-        public override string LookupText { get; set; }
-
-        #endregion Properties ZViewBase
-
         #region Methods
         
         public UserClaimViewModel()
         {
-            Id = 1;
+            Id = LibraryDefaults.Default_Int32;
+            UserId = LibraryDefaults.Default_String;
+            ClaimType = null;
+            ClaimValue = null;
         }
         
         public UserClaimViewModel(
@@ -60,7 +56,6 @@ namespace EasyLOB.Security.Data
             string claimValue = null,
             string userLookupText = null
         )
-            : this()
         {
             Id = id;
             UserId = userId;
@@ -90,9 +85,7 @@ namespace EasyLOB.Security.Data
                 Id = x.Id,
                 UserId = x.UserId,
                 ClaimType = x.ClaimType,
-                ClaimValue = x.ClaimValue,
-                UserLookupText = x.UserLookupText,
-                LookupText = x.LookupText
+                ClaimValue = x.ClaimValue
             };
         }
 

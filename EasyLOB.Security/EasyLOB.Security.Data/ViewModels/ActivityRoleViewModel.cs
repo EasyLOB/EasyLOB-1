@@ -40,18 +40,13 @@ namespace EasyLOB.Security.Data
     
         #endregion Associations FK
 
-        #region Properties ZViewBase
-
-        public override string LookupText { get; set; }
-
-        #endregion Properties ZViewBase
-
         #region Methods
         
         public ActivityRoleViewModel()
         {
-            ActivityId = "A";
-            RoleId = "A";
+            ActivityId = LibraryDefaults.Default_String;
+            RoleId = LibraryDefaults.Default_String;
+            Operations = null;
         }
         
         public ActivityRoleViewModel(
@@ -61,7 +56,6 @@ namespace EasyLOB.Security.Data
             string activityLookupText = null,
             string roleLookupText = null
         )
-            : this()
         {
             ActivityId = activityId;
             RoleId = roleId;
@@ -90,10 +84,7 @@ namespace EasyLOB.Security.Data
             {
                 ActivityId = x.ActivityId,
                 RoleId = x.RoleId,
-                Operations = x.Operations,
-                ActivityLookupText = x.ActivityLookupText,
-                RoleLookupText = x.RoleLookupText,
-                LookupText = x.LookupText
+                Operations = x.Operations
             };
         }
 
