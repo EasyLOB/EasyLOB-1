@@ -91,13 +91,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>UserRoleResources.resx</DependentUpon>
     </Compile>
-    <Compile Include="ViewModels\ActivityRoleViewModel.cs" />
-    <Compile Include="ViewModels\ActivityViewModel.cs" />
-    <Compile Include="ViewModels\RoleViewModel.cs" />
-    <Compile Include="ViewModels\UserClaimViewModel.cs" />
-    <Compile Include="ViewModels\UserLoginViewModel.cs" />
-    <Compile Include="ViewModels\UserRoleViewModel.cs" />
-    <Compile Include="ViewModels\UserViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\EasyLOB.Library\EasyLOB.Library\EasyLOB.Library.csproj">
