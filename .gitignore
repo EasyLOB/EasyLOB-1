@@ -26,9 +26,9 @@ Help/Help/
 [Rr]eleases/
 x64/
 x86/
-# bld/
-# [Bb]in/
-# [Oo]bj/
+bld/
+[Bb]in/
+[Oo]bj/
 
 # Visual Studio 2015 cache/options directory
 .vs/
