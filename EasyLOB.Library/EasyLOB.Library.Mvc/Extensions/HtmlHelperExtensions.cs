@@ -23,14 +23,14 @@ namespace EasyLOB.Library.Mvc
         public static MvcHtmlString OperationResult(this HtmlHelper htmlHelper,
             ZOperationResult operationResult)
         {
-            return MvcHtmlString.Create(operationResult.Html);
+            return new MvcHtmlString(operationResult.Html);
         }
 
         public static MvcHtmlString ResolveUrl(this HtmlHelper htmlHelper, string url)
         {
             var urlHelper = new UrlHelper(htmlHelper.ViewContext.RequestContext);
 
-            return MvcHtmlString.Create(urlHelper.Content(url));
+            return new MvcHtmlString(urlHelper.Content(url));
         }
     }
 }
